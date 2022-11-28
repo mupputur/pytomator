@@ -12,23 +12,14 @@ class WebLocateHelper:
 
     def identify_element(self, locator, locator_type, element_text):
         element = None
-        # wait = WebDriverWait(self.driver, 10)
-        # return wait.until(ec._element_if_visible())
         try:
-            """if locator_type == "XPATH":
-                element_loc = wait.until(ec._element_if_visible(By.XPATH, locator))
-            elif locator_type == "NAME":
-                element_loc = wait.until(ec._element_if_visible(By.NAME, locator))
-            elif locator_type == "ID":
-                element_loc = wait.until(ec._element_if_visible(By.ID, locator))"""
-
             if locator_type == "XPATH":
                 element = self.driver.find_element(By.XPATH, locator)
             elif locator_type == "NAME":
                 element = self.driver.find_element(By.NAME, locator)
+                print(element)
             elif locator_type == "ID":
                 element = self.driver.find_element(By.ID, locator)
-
         except Exception as e:
             raise Exception("Unable to locate the element {} and Error: ".format(element_text, str(e)))
         # return element_loc
@@ -41,19 +32,11 @@ class WebLocateHelper:
         except Exception as e:
             raise Exception("Unable to click on {}, error: {}".format(element_text, str(e)))
 
-    def enter_text(self, element, element_text, name, max_quantity=None):
-        for i in range(10):
-            element.send_keys(Keys.BACK_SPACE)
-
+    def enter_text(self, element, element_text):
         try:
-            if max_quantity is not None:
-                element.send_keys(name)
-            else:
-                element.send_keys(element_text)
-                # print("***********************************************************")
-
+            element.send_keys(element_text)
         except Exception as e:
-            raise Exception("Unable to enter the text on {}, error: {}".format(element_text, str(e)))
+            print("Unable to send the text ")
 
     def run_script(self, element):
         self.driver.execute_script("arguments[0].scrollIntoView();", element)
