@@ -1,5 +1,6 @@
 from login_page import LoginPage
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
+import time
 
 
 class HomePage:
@@ -38,7 +39,11 @@ class HomePage:
 
         :Authors: Pravallika
         """
-        pass
+        print("Navigating to time page...")
+        time_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[4]", "XPATH", "Time")
+        time_page.click()
+        time.sleep(2)
+        print("Successfully navigated to time page")
 
     def navigate_to_recruitment(self):
         """
@@ -46,7 +51,11 @@ class HomePage:
 
         :Authors: Pravallika
         """
-        pass
+        print("Navigating to recruitement page...")
+        recruitment_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[5]", "XPATH", "Recruitment")
+        recruitment_page.click()
+        time.sleep(2)
+        print("Successfully navigated to recruitment page")
 
     def navigate_to_performance(self):
         """
@@ -54,15 +63,23 @@ class HomePage:
 
         :Authors: Radha Krishna
         """
-        pass
-
+        print("Navigating to performance page ...")
+        performance_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[7]", "XPATH", "Performance")
+        performance_page.click()
+        time.sleep(5)
+        print("Successfully navigated to performance page")
     def navigate_to_leave(self):
         """
         Function navigates to leave page
 
         :Authors: Radha Krishna
         """
-        pass
+        print("Navigating to leave page ...")
+        leave_page = self.helper.identify_element("//a[@href= '/web/index.php/leave/viewLeaveModule']", "XPATH",
+                                                  "Leave")
+        leave_page.click()
+        time.sleep(5)
+        print("Successfully navigated to leave page")
 
     def navigate_to_myinfo(self):
         """
@@ -70,7 +87,11 @@ class HomePage:
 
         :Authors: Sreedevi
         """
-        pass
+        print("Navigating to myinfo...")
+        myinfo_page = self.helper.identify_element ("(//a[@class='oxd-main-menu-item'])[6]", "XPATH", "My Info")
+        myinfo_page.click()
+        time.sleep(5)
+        print("Successfully navigated to myinfo")
 
     def navigate_to_dashboard(self):
         """
@@ -78,7 +99,11 @@ class HomePage:
 
         :Authors: Sreedevi
         """
-        pass
+        print("Navigating to dashboard...")
+        dashboard_page = self.helper.identify_element("//a[@class='oxd-main-menu-item active']", "XPATH", "Dashboard")
+        dashboard_page.click()
+        time.sleep(5)
+        print("Successfully navigated to dashboard")
 
     def navigate_to_directories(self):
         """
@@ -86,7 +111,11 @@ class HomePage:
 
         :Authors: Sreevani
         """
-        pass
+        print("navigates to directories page...")
+        directories_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[8]", "XPATH", "Directory")
+        directories_page.click()
+        time.sleep(5)
+        print("Successfully navigated directories page")
 
     def navigate_to_maintenance(self):
         """
@@ -94,7 +123,11 @@ class HomePage:
 
         :Authors: Sreevani
         """
-        pass
+        print("navigates to maintenance page...")
+        maintenance_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[9]", "XPATH", "Maintance")
+        maintenance_page.click()
+        time.sleep(5)
+        print("Successfully navigated maintenance page ")
 
     def navigate_to_buzz(self):
         """
@@ -102,7 +135,11 @@ class HomePage:
 
         :Authors: Radha Krishna
         """
-        pass
+        print("Navigating to buzz page ...")
+        buzz_page = self.helper.identify_element("//a[@href= '/web/index.php/buzz/viewBuzz']", "XPATH", "Buzz")
+        buzz_page.click()
+        time.sleep(5)
+        print("Successfully navigated to buzz page")
 
 if __name__ == "__main__":
     # Test code or Driver code
@@ -113,4 +150,13 @@ if __name__ == "__main__":
     # Navigate to Home --> PIM
     obj = HomePage(dm.driver)
     # obj.navigate_to_pim()
-    obj.navigate_to_admin()
+    #obj.navigate_to_admin()
+    #obj.navigate_to_myinfo()
+    #obj.navigate_to_dashboard()
+    #obj.navigate_to_time()
+    #obj.navigate_to_recruitment()
+    #obj.navigate_to_leave()
+    #obj.navigate_to_performance()
+    #obj.navigate_to_buzz()
+    #obj.navigate_to_directories()
+    obj.navigate_to_maintenance()
