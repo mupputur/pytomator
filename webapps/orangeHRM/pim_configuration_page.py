@@ -12,12 +12,12 @@ class PIMConfigurationPage:
         pim_page = PIMPage(driver)
         #self.Custom_field = '//*[text()="Custom Fields"]'
         #pim_page.navigate_to_configuration(self.Custom_field)
-        #self.Reporting_Methods = '//*[text()="Reporting Methods"]'
-        #pim_page.navigate_to_configuration(self.Reporting_Methods)
+        self.Reporting_Methods = '//*[text()="Reporting Methods"]'
+        pim_page.navigate_to_configuration(self.Reporting_Methods)
         #self.Termination_Reasons = '//*[text()="Termination Reasons"]'
         #pim_page.navigate_to_configuration(self.Termination_Reasons)
-        self.Optional_Fields = '//*[text()="Optional Fields"]'
-        pim_page.navigate_to_configuration(self.Optional_Fields)
+        #self.Optional_Fields = '//*[text()="Optional Fields"]'
+        #pim_page.navigate_to_configuration(self.Optional_Fields)
         self.helper = WebLocateHelper(driver)
 
     def enable_optional_fields(self, **filed_values):
@@ -167,10 +167,10 @@ if __name__ == "__main__":
     #obj_optional_fields.disable_optional_fields(**{"v1": "Show SSN field in Personal Details"})
     #obj_optional_fields.disable_optional_fields(**{"v2": "Show SIN field in Personal Details"})
     #time.sleep(5)
-    obj_optional_fields = PIMConfigurationPage(dm.driver)
-    obj_optional_fields.enable_optional_fields(**{"v1": "Show SSN field in Personal Details"})
-    obj_optional_fields.enable_optional_fields(**{"v2": "Show SIN field in Personal Details"})
-    time.sleep(5)
+    #obj_optional_fields = PIMConfigurationPage(dm.driver)
+    #obj_optional_fields.enable_optional_fields(**{"v1": "Show SSN field in Personal Details"})
+    #obj_optional_fields.enable_optional_fields(**{"v2": "Show SIN field in Personal Details"})
+    #time.sleep(5)
     #obj_enable_optional_fields = PIMConfigurationPage(dm.driver)
     #obj_enable_optional_fields.enable_all_optional_fields()
     #obj_disable_optional_fields = PIMConfigurationPage(dm.driver)
@@ -180,8 +180,8 @@ if __name__ == "__main__":
     #custom_field.add_custom_fields(**{'Field NAME':'Aadhar'})
     #obj_custom_field = PIMConfigurationPage(dm.driver)
     #obj_custom_field.get_custom_filed_records()
-    #obj_reporting_method = PIMConfigurationPage(dm.driver)
-    #obj_reporting_method.get_reporting_method_records()
+    obj_reporting_method = PIMConfigurationPage(dm.driver)
+    obj_reporting_method.get_reporting_method_records()
     #reporting_method = PIMConfigurationPage(dm.driver)
     #reporting_method.add_reporting_method()
     #obj_termination_reasons = PIMConfigurationPage(dm.driver)
