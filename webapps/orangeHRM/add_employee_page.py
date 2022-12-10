@@ -5,8 +5,6 @@ from pim_page import PIMPage
 from libUtils.seleniumUtils.driver_manager import DriverManager
 
 
-
-
 class AddEmployeePage:
 
     def __init__(self, driver):
@@ -14,28 +12,23 @@ class AddEmployeePage:
         pim_page.navigate_to_add_employee()
         self.helper = WebLocateHelper(driver)
 
-
-    def add_employee_with_out_login_details(self, **details):
+    def add_employee_with_out_login_details(self, first_name, middle_name, last_name):
         firstname = self.helper.identify_element('//input[@class="oxd-input oxd-input--active orangehrm-firstname"]', "XPATH", "firstname")
-        self.helper.enter_text(firstname, "Radha")
-        self.helper.click_on(firstname, '')
+        self.helper.enter_text(firstname, first_name)
         time.sleep(5)
         middlename = self.helper.identify_element('//input[@class="oxd-input oxd-input--active orangehrm-middlename"]',"XPATH", "middlename")
-        self.helper.enter_text(middlename, "Krishna")
-        self.helper.click_on(middlename, '')
+        self.helper.enter_text(middlename, middle_name)
         time.sleep(5)
         lastname = self.helper.identify_element('//input[@class="oxd-input oxd-input--active orangehrm-lastname"]',"XPATH", "lastname")
-        self.helper.enter_text(lastname, "Raju")
-        self.helper.click_on(lastname, '')
+        self.helper.enter_text(lastname, last_name)
         time.sleep(5)
         save = self.helper.identify_element("//button[@type='submit']", "XPATH", "click_save")
         save.click()
         time.sleep(5)
 
-    def add_employee_with_login_details(self, status=True, **details):
+    def add_employee_with_login_details(self, first_name, middle_name, last_name, ):
         firstname = self.helper.identify_element('//input[@class="oxd-input oxd-input--active orangehrm-firstname"]',"XPATH", "firstname")
         self.helper.enter_text(firstname, "Radha")
-        self.helper.click_on(firstname, '')
         time.sleep(3)
         middlename = self.helper.identify_element('//input[@class="oxd-input oxd-input--active orangehrm-middlename"]',"XPATH", "middlename")
         self.helper.enter_text(middlename, "Raju")
@@ -63,7 +56,6 @@ class AddEmployeePage:
         save = self.helper.identify_element("//button[@type='submit']", "XPATH", "click_save")
         save.click()
         time.sleep(5)
-
 
     def get_records(self):
         add_employee = self.helper.identify_element("(//a[@class='oxd-topbar-body-nav-tab-item'])[2]", "XPATH","add employee")
