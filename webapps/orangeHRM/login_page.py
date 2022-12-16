@@ -1,6 +1,6 @@
 import time
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
-
+from libUtils.seleniumUtils.locators import LoginPageLocators as lp
 
 class LoginPage:
 
@@ -10,15 +10,16 @@ class LoginPage:
 
     def login(self):
         print("Login into the application...")
-        ele_username = self.helper.identify_element("username", "NAME", "Username")
+        ele_username = self.helper.identify_element(lp.USERNAME_TB_NAME_LOC[0], lp.USERNAME_TB_NAME_LOC[1], "Username")
         self.helper.enter_text(ele_username, "Admin")
         time.sleep(2)
-        element_password = self.helper.identify_element("password", "NAME", "password")
+        element_password = self.helper.identify_element(lp.PASSWORD_TB_NAME_LOC[0], lp.PASSWORD_TB_NAME_LOC[1], "password")
         self.helper.enter_text(element_password, "admin123")
         time.sleep(2)
-        element_login_button = self.helper.identify_element("//button[@type='submit']", "XPATH", "login button")
+        element_login_button = self.helper.identify_element(lp.LOGIN_BT_XPATH_LOC[0], lp.LOGIN_BT_XPATH_LOC[1], "login button")
         self.helper.click_on(element_login_button, "LoginButton")
         print("Successfully login to application.")
+
     def logout(self):
         print("Logging out app")
 

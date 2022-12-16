@@ -3,10 +3,6 @@ import time
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
 from webapps.orangeHRM.pim_page import PIMPage
 from libUtils.seleniumUtils.driver_manager import DriverManager
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-
-
 
 class AddEmployeePage:
 
