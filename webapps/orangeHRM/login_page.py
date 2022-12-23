@@ -10,6 +10,7 @@ class LoginPage:
 
     def login(self):
         print("Login into the application...")
+        time.sleep(5)
         ele_username = self.helper.identify_element(lp.USERNAME_TB_NAME_LOC[0], lp.USERNAME_TB_NAME_LOC[1], "Username")
         self.helper.enter_text(ele_username, "Admin")
         time.sleep(2)

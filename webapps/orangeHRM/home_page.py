@@ -1,5 +1,6 @@
 from login_page import LoginPage
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
+from libUtils.seleniumUtils.locators import HomePageLocators as lp
 import time
 
 
@@ -18,8 +19,9 @@ class HomePage:
         :Authors: mupputuri
         """
         print("Navigating to pim page ...")
-        pim_page = self.helper.identify_element("//a[@href= '/web/index.php/pim/viewPimModule']", "XPATH", "PIM")
+        pim_page = self.helper.identify_element(lp.PIM_PAGE_BT_XPATH_LOC[0],lp.PIM_PAGE_BT_XPATH_LOC[1], "PIM")
         pim_page.click()
+        time.sleep(5)
         print("Successfully navigated to pim page")
 
     def navigate_to_admin(self):
@@ -29,8 +31,9 @@ class HomePage:
         :Authors: mupputuri
         """
         print("Navigating to admin page...")
-        admin_page = self.helper.identify_element("//a[@href='/web/index.php/admin/viewAdminModule']", "XPATH", "Admin")
+        admin_page = self.helper.identify_element(lp.ADMIN_PAGE_BT_XPATH_LOC[0],lp.ADMIN_PAGE_BT_XPATH_LOC[1], "Admin")
         admin_page.click()
+        time.sleep(5)
         print("Successfully navigated to admin page")
 
     def navigate_to_time(self):
@@ -40,9 +43,9 @@ class HomePage:
         :Authors: Pravallika
         """
         print("Navigating to time page...")
-        time_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[4]", "XPATH", "Time")
+        time_page = self.helper.identify_element(lp.TIME_PAGE_BT_XPATH_LOC[0],lp.TIME_PAGE_BT_XPATH_LOC[1], "Time")
         time_page.click()
-        time.sleep(2)
+        time.sleep(5)
         print("Successfully navigated to time page")
 
     def navigate_to_recruitment(self):
@@ -52,9 +55,9 @@ class HomePage:
         :Authors: Pravallika
         """
         print("Navigating to recruitement page...")
-        recruitment_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[5]", "XPATH", "Recruitment")
+        recruitment_page = self.helper.identify_element(lp.RECRUITMENT_PAGE_BT_XPATH_LOC[0],lp.RECRUITMENT_PAGE_BT_XPATH_LOC[1], "Recruitment")
         recruitment_page.click()
-        time.sleep(2)
+        time.sleep(5)
         print("Successfully navigated to recruitment page")
 
     def navigate_to_performance(self):
@@ -64,7 +67,7 @@ class HomePage:
         :Authors: Radha Krishna
         """
         print("Navigating to performance page ...")
-        performance_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[7]", "XPATH", "Performance")
+        performance_page = self.helper.identify_element(lp.PERFORMANCE_PAGE_BT_XPATH_LOC[0],lp.PERFORMANCE_PAGE_BT_XPATH_LOC[1], "Performance")
         performance_page.click()
         time.sleep(5)
         print("Successfully navigated to performance page")
@@ -75,7 +78,7 @@ class HomePage:
         :Authors: Radha Krishna
         """
         print("Navigating to leave page ...")
-        leave_page = self.helper.identify_element("//a[@href= '/web/index.php/leave/viewLeaveModule']", "XPATH",
+        leave_page = self.helper.identify_element(lp.LEAVE_PAGE_BT_XPATH_LOC[0],lp.LEAVE_PAGE_BT_XPATH_LOC[1],
                                                   "Leave")
         leave_page.click()
         time.sleep(5)
@@ -88,7 +91,7 @@ class HomePage:
         :Authors: Sreedevi
         """
         print("Navigating to myinfo...")
-        myinfo_page = self.helper.identify_element ("(//a[@class='oxd-main-menu-item'])[6]", "XPATH", "My Info")
+        myinfo_page = self.helper.identify_element (lp.MYINFO_PAGE_BT_XPATH_LOC[0],lp.MYINFO_PAGE_BT_XPATH_LOC[1], "My Info")
         myinfo_page.click()
         time.sleep(5)
         print("Successfully navigated to myinfo")
@@ -100,7 +103,7 @@ class HomePage:
         :Authors: Sreedevi
         """
         print("Navigating to dashboard...")
-        dashboard_page = self.helper.identify_element("//a[@class='oxd-main-menu-item active']", "XPATH", "Dashboard")
+        dashboard_page = self.helper.identify_element(lp.DASHBOARD_PAGE_BT_XPATH_LOC[0],lp.DASHBOARD_PAGE_BT_XPATH_LOC[1], "Dashboard")
         dashboard_page.click()
         time.sleep(5)
         print("Successfully navigated to dashboard")
@@ -112,7 +115,7 @@ class HomePage:
         :Authors: Sreevani
         """
         print("navigates to directories page...")
-        directories_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[8]", "XPATH", "Directory")
+        directories_page = self.helper.identify_element(lp.DIRECTORIES_PAGE_BT_XPATH_LOC[0],lp.DIRECTORIES_PAGE_BT_XPATH_LOC[1], "Directory")
         directories_page.click()
         time.sleep(5)
         print("Successfully navigated directories page")
@@ -124,7 +127,7 @@ class HomePage:
         :Authors: Sreevani
         """
         print("navigates to maintenance page...")
-        maintenance_page = self.helper.identify_element("(//a[@class='oxd-main-menu-item'])[9]", "XPATH", "Maintance")
+        maintenance_page = self.helper.identify_element(lp.MAINTAINANCE_PAGE_BT_XPATH_LOC[0],lp.MAINTAINANCE_PAGE_BT_XPATH_LOC[1], "Maintance")
         maintenance_page.click()
         time.sleep(5)
         print("Successfully navigated maintenance page ")
@@ -136,7 +139,7 @@ class HomePage:
         :Authors: Radha Krishna
         """
         print("Navigating to buzz page ...")
-        buzz_page = self.helper.identify_element("//a[@href= '/web/index.php/buzz/viewBuzz']", "XPATH", "Buzz")
+        buzz_page = self.helper.identify_element(lp.BUZZ_PAGE_BT_XPATH_LOC[0],lp.BUZZ_PAGE_BT_XPATH_LOC[1], "Buzz")
         buzz_page.click()
         time.sleep(5)
         print("Successfully navigated to buzz page")
@@ -149,7 +152,7 @@ if __name__ == "__main__":
 
     # Navigate to Home --> PIM
     obj = HomePage(dm.driver)
-    # obj.navigate_to_pim()
+    #obj.navigate_to_pim()
     #obj.navigate_to_admin()
     #obj.navigate_to_myinfo()
     #obj.navigate_to_dashboard()

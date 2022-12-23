@@ -1,5 +1,6 @@
 from home_page import HomePage
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
+from libUtils.seleniumUtils.locators import TimePageLocators as lp
 import time
 
 
@@ -10,35 +11,39 @@ class TimePage:
         home_page.navigate_to_time()
         self.helper = WebLocateHelper(driver)
 
-    def navigate_to_time_sheets(self, option):
-       time_sheet = self.helper.identify_element("//*[@class='oxd-icon bi-chevron-down']", "XPATH", "Timesheet")
+    def navigate_to_time_sheets(self, option,identifier):
+       time_sheet = self.helper.identify_element(lp.TIMESHEET_BT_XPATH_LOC[0],
+                                                  lp.TIMESHEET_BT_XPATH_LOC[1], "Timesheet")
        time_sheet.click()
        time.sleep(3)
-       sub_mobule = self.helper.identify_element(option, "XPATH", "Timesheet")
+       sub_mobule = self.helper.identify_element(option,identifier, "Timesheet")
        sub_mobule.click()
        time.sleep(3)
 
-    def navigate_to_attendance(self, option):
-        attendence=self.helper.identify_element('//*[text()="Attendance "]',"XPATH",'Attendence')
+    def navigate_to_attendance(self, option,identifier):
+        attendence=self.helper.identify_element(lp.ATTENDENCE_BT_XPATH_LOC[0],
+                                                lp.ATTENDENCE_BT_XPATH_LOC[1],"Attendence")
         attendence.click()
         time.sleep(3)
-        sub_mobule = self.helper.identify_element(option, "XPATH", "Attendence")
+        sub_mobule = self.helper.identify_element(option,identifier, "Attendence")
         sub_mobule.click()
         time.sleep(3)
 
-    def navigate_to_reports(self, option):
-        reports=self.helper.identify_element('//*[text()="Reports "]',"XPATH",'Reports')
+    def navigate_to_reports(self, option,identifier):
+        reports=self.helper.identify_element(lp.REPORTS_BT_XPATH_LOC[0],
+                                             lp.REPORTS_BT_XPATH_LOC[1],"Reports")
         reports.click()
         time.sleep(3)
-        sub_mobule = self.helper.identify_element(option, "XPATH", "Reports")
+        sub_mobule = self.helper.identify_element(option,identifier, "Reports")
         sub_mobule.click()
         time.sleep(3)
 
-    def navigate_to_project_info(self, option):
-        project_info = self.helper.identify_element('//*[text()="Project Info "]', "XPATH", 'Project info')
+    def navigate_to_project_info(self, option,identifier):
+        project_info = self.helper.identify_element(lp.PROJECT_INFO_BT_XPATH_LOC[0],
+                                                    lp.PROJECT_INFO_BT_XPATH_LOC[1], "Project info")
         project_info.click()
         time.sleep(3)
-        sub_mobule = self.helper.identify_element(option, "XPATH", "Project info")
+        sub_mobule = self.helper.identify_element(option,identifier, "Project info")
         sub_mobule.click()
         time.sleep(3)
 
@@ -51,18 +56,31 @@ if __name__ == "__main__":
     # Navigate to Home --> PIM
     obj = TimePage(dm.driver)
     time.sleep(3)
-    #my_timesheet="//a[@class='oxd-topbar-body-nav-tab-link']"
-    #employe_timesheet="//*[text()='Employee Timesheets']"
-    #obj.navigate_to_time_sheets(employe_timesheet)
-    #my_report='//*[text()="My Records"]'
-    #punch_inout='//*[text()="Punch In/Out"]'
-    #employee_records='//*[text()="Employee Records"]'
-    #configaration='//*[text()="Configuration"]'
-    #obj.navigate_to_attendance(configaration)
-    #projects_reports='//*[text()="Project Reports"]'
-    #employee_reports='//*[text()="Employee Reports"]'
-    #attendance_summary='//*[text()="Attendance Summary"]'
-    #obj.navigate_to_reports(attendance_summary)
-    #customers='//*[text()="Customers"]'
-    projects='//*[text()="Projects"]'
-    obj.navigate_to_project_info(projects)
+    #TIMESHEET-----------
+    #my_timesheet=lp.MY_TIMESHEET_BT_XPATH_LOC[0]
+    #obj.navigate_to_time_sheets(my_timesheet,lp.MY_TIMESHEET_BT_XPATH_LOC[1])
+    #employe_timesheet=lp.EMPLOYEE_TIMESHEET_BT_XPATH_LOC[0]
+    #obj.navigate_to_time_sheets(employe_timesheet,lp.EMPLOYEE_TIMESHEET_BT_XPATH_LOC[1])
+
+    # ATTENDENCE-----------
+    #my_record=lp.MY_RECORDS_BT_XPATH_LOC[0]
+    #obj.navigate_to_attendance(my_record, lp.MY_RECORDS_BT_XPATH_LOC[1])
+    #punch_inout=lp.PUNCH_INOUT_BT_XPATH_LOC[0]
+    #obj.navigate_to_attendance(punch_inout, lp.PUNCH_INOUT_BT_XPATH_LOC[1])
+    #employee_records=lp.EMPLOYEE_RECORDS_BT_XPATH_LOC[0]
+    #obj.navigate_to_attendance(employee_records, lp.EMPLOYEE_RECORDS_BT_XPATH_LOC[1])
+    #configaration=lp.CONFIGARATION_BT_XPATH_LOC[0]
+    #obj.navigate_to_attendance(configaration,lp.CONFIGARATION_BT_XPATH_LOC[1])
+    #REPORT------------------
+    #projects_reports=lp.PROJECT_REPORTS_BT_XPATH_LOC[0]
+    #obj.navigate_to_reports(projects_reports, lp.PROJECT_REPORTS_BT_XPATH_LOC[1])
+    #employee_reports=lp.EMPLOYEE_REPORTS_BT_XPATH_LOC[0]
+    #obj.navigate_to_reports(employee_reports, lp.EMPLOYEE_REPORTS_BT_XPATH_LOC[1])
+    #attendance_summary=lp.ATTENDENCE_SUMMARY_BT_XPATH_LOC[0]
+    #obj.navigate_to_reports(attendance_summary,lp.ATTENDENCE_SUMMARY_BT_XPATH_LOC[1])
+
+    #PROJECT_INFO-------------------
+    #customers=lp.CUSTOMERS_BT_XPATH_LOC[0]
+    #obj.navigate_to_project_info(customers,lp.CUSTOMERS_BT_XPATH_LOC[1])
+    projects=lp.PROJECTS_BT_XPATH_LOC[0]
+    obj.navigate_to_project_info(projects,lp.PROJECTS_BT_XPATH_LOC[1])
