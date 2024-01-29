@@ -1,4 +1,4 @@
-from login_page import LoginPage
+from webapps.orangeHRM.login_page import LoginPage
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
 from libUtils.seleniumUtils.locators import HomePageLocators as lp
 import time

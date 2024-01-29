@@ -17,7 +17,8 @@ class AddEmployeePageLocators:
     PASSWORD_TB_XPATH_LOC=("//input[@type='password']","XPATH")
     CONFIRM_PASSWORD_TB_XPATH_LOC=("(//input[@type='password'])[2]","XPATH")
     ADD_EMPLOYEE_TB_XPATH_LOC=("(//a[@class='oxd-topbar-body-nav-tab-item'])[2]","XPATH")
-
+    EMPLOYEE_ID_TB_XPATH_LOC=("//*[@id='app']/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/input","XPATH")
+    ERROR_MESSAGE_LOC=("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']","XPATH")
 
 class PIMPAGELocators:
 
@@ -34,7 +35,7 @@ class PIMPAGELocators:
 
 
 class HomePageLocators:
-    PIM_PAGE_BT_XPATH_LOC=("//a[@href= '/web/index.php/pim/viewPimModule']", "XPATH")
+    PIM_PAGE_BT_XPATH_LOC=("//*[@id='app']/div[1]/div[1]/aside/nav/div[2]/ul/li[2]/a", "XPATH")
     ADMIN_PAGE_BT_XPATH_LOC=("//a[@href='/web/index.php/admin/viewAdminModule']", "XPATH")
     TIME_PAGE_BT_XPATH_LOC=("(//a[@class='oxd-main-menu-item'])[4]", "XPATH")
     RECRUITMENT_PAGE_BT_XPATH_LOC=("(//a[@class='oxd-main-menu-item'])[5]", "XPATH")

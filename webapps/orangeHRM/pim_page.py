@@ -2,7 +2,7 @@ __author__="pravallikakolakaluri"
 
 import time
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
-from home_page import HomePage
+from webapps.orangeHRM.home_page import HomePage
 from libUtils.seleniumUtils.locators import PIMPAGELocators as lp
 
 class PIMPage:
