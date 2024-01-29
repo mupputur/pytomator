@@ -8,7 +8,7 @@ class LoginPage:
         self.driver = driver
         self.helper = WebLocateHelper(self.driver)
 
-    def login(self):
+    def login_application(self):
         print("Login into the application...")
         time.sleep(5)
         ele_username = self.helper.identify_element(lp.USERNAME_TB_NAME_LOC[0], lp.USERNAME_TB_NAME_LOC[1], "Username")
@@ -19,7 +19,16 @@ class LoginPage:
         time.sleep(2)
         element_login_button = self.helper.identify_element(lp.LOGIN_BT_XPATH_LOC[0], lp.LOGIN_BT_XPATH_LOC[1], "login button")
         self.helper.click_on(element_login_button, "LoginButton")
+        print("waiting user login.....")
+        time.sleep(10)
         print("Successfully login to application.")
+
+    def login(self):
+        try :
+            self.login_application()
+        except Exception as e:
+            print("Might be there is CRF token issue. Retrying to login......")
+            self.login_application()
 
     def logout(self):
         print("Logging out app")
