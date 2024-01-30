@@ -2,7 +2,7 @@ __authors__ = ['mupputuri', 'pravallika']
 
 import time
 from libUtils.seleniumUtils.weblocate_helper import WebLocateHelper
-from pim_page import PIMPage
+from webapps.orangeHRM.pim_page import PIMPage
 from libUtils.seleniumUtils.driver_manager import DriverManager
 from libUtils.seleniumUtils.locators import EmployeeListPageLocators as lp
 from selenium.webdriver.common.action_chains import ActionChains
@@ -14,7 +14,7 @@ class EmployeeListPage:
         pim_page.navigate_to_employee_list()
         self.helper = WebLocateHelper(driver)
 
-    def search(self, emp_name,empid,Supervisor):
+    def reset_button(self, emp_name,empid,Supervisor):
         employee_name = self.helper.identify_element(lp.EMPLOYEE_NAME_TB_XPATH_LOC[0],lp.EMPLOYEE_NAME_TB_XPATH_LOC[1],"employee_name")
         self.helper.enter_text(employee_name, emp_name)
         time.sleep(3)
@@ -51,7 +51,7 @@ class EmployeeListPage:
         reset.click()
         time.sleep(5)
 
-    def reset(self):
+    '''def reset(self):
         employee_name = self.helper.identify_element(lp.EMPLOYEE_NAME_TB_XPATH_LOC[0],lp.EMPLOYEE_NAME_TB_XPATH_LOC[1],"employee_name")
         self.helper.enter_text(employee_name, "Linda Jane Anderson")
         time.sleep(3)
@@ -87,7 +87,7 @@ class EmployeeListPage:
         reset = self.helper.identify_element(lp.RESET_BT_XPATH_LOC[0],lp.RESET_BT_XPATH_LOC[1], "reset")
         reset.click()
         time.sleep(5)
-
+'''
     def get_all_records(self):
         employee_list = self.helper.identify_element(lp.EMP_LIST_BT_XPATH_LOC[0],lp.EMP_LIST_BT_XPATH_LOC[1], "employee list")
         employee_list.click()
@@ -96,8 +96,8 @@ class EmployeeListPage:
 if __name__ == "__main__":
     dm = DriverManager()
     emp_list = EmployeeListPage(dm.driver)
-    #emp_list.get_all_records()
-    emp_list.reset()
+    emp_list.get_all_records()
+    #emp_list.reset()
     #keywords ={"Employee Name":"Linda Jane Anderson"}
     #emp_list.search(**{"Employee Name" : "Linda Jane Anderson"})
     #emp_list.search('Anthony','4567','Linda Jane Anderson')
