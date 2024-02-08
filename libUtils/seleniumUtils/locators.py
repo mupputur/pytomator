@@ -18,8 +18,10 @@ class AddEmployeePageLocators:
     CONFIRM_PASSWORD_TB_XPATH_LOC=("(//input[@type='password'])[2]","XPATH")
     ADD_EMPLOYEE_TB_XPATH_LOC=("(//a[@class='oxd-topbar-body-nav-tab-item'])[2]","XPATH")
     EMPLOYEE_ID_TB_XPATH_LOC=("//*[@id='app']/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/input","XPATH")
-    ERROR_MESSAGE_LOC=("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']","XPATH")
-
+    ERROR_MESSAGE_USERNAME=("//span[text()='Username already exists']","XPATH")
+    ERROR_MESSAGE_PASSWORD=("//span[text()='Passwords do not match']","XPATH")
+    ERROR_MESSAGE_PASSWORD_ERROR = ("//span[text()='Your password must contain minimum 1 number']","XPATH")
+    ERROR_MESSAGE_EMPID= ("//span[text()='Employee Id already exists']", "XPATH")
 class PIMPAGELocators:
 
     CONFIGURATION_BT_XPATH_LOC=("//span[@class='oxd-topbar-body-nav-tab-item']", "XPATH")

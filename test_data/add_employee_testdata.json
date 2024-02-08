@@ -1,0 +1,78 @@
+{
+  "test_add_employee_without_login_details":
+  {
+    "firstname" : "veena",
+    "middlename": "karahalli",
+    "lastname": "nanjundappa"
+
+  },
+  "test_add_employee_with_out_login_details_cus_empid":
+  {
+    "firstname" : "vishal",
+    "middlename": "sushi",
+    "lastname": "rayappa",
+    "empid": "1278"
+
+  },
+  "test_add_employee_with_login_details":
+  {
+    "firstname" : "vinod",
+    "middlename": "sushi",
+    "lastname": "changalarayappa",
+    "username": "vinod10",
+    "password": "Avnt@2022",
+    "confpassword": "Avnt@2022"
+
+  },
+  "test_add_existing_employee_with_out_login_details_diff_empid":
+  {
+    "firstname" : "vishal",
+    "middlename": "sushi",
+    "lastname": "rayappa",
+    "empid": "12379"
+
+  },
+  "test_add_existing_employee_with_out_login_details_same_empid":
+  {
+    "firstname" : "vishal",
+    "middlename": "sushi",
+    "lastname": "rayappa",
+    "empid": "1278"
+
+  },
+  "test_add_employee_with_out_login_details_blank_fields":
+  {
+    "firstname" : " ",
+    "middlename": "karahalli",
+    "lastname": " "
+
+  },
+  "test_add_employee_with_login_details_exist_username":
+  {
+    "firstname" : "vikram",
+    "middlename": "ram",
+    "lastname": "rm",
+    "username": "vinod10",
+    "password": "vikkyrm@2024",
+    "confpassword": "vikkyrm@2024"
+
+  },
+  "test_add_employee_with_login_details_diff_pwd_confpwd":
+  {
+    "firstname" : "praveen",
+    "middlename": "giri",
+    "lastname": "kn",
+    "username": "praveen10",
+    "password": "pravin@22",
+    "confpassword": "pravin.22"
+  },
+  "test_add_employee_with_login_details_wrong_pwd_credential":
+  {
+    "firstname" : "hari",
+    "middlename": "sri",
+    "lastname": "av",
+    "username": "srihari10",
+    "password": "Sreeharee",
+    "confpassword": "Sreeharee"
+  }
+}
